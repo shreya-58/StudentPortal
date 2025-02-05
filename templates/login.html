@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <nav class="bg-gray-200 py-4">
+        <div class="container mx-auto px-4">
+            <span class="text-2xl font-bold">Student Portal</span>
+        </div>
+    </nav>
+
+    <h2 class="text-center text-3xl font-semibold mt-8">Login</h2>
+
+    <div class="container mx-auto mt-10 px-4">
+        <div class="flex justify-center">
+            <div class="w-full max-w-md">
+                <div class="bg-white shadow-md rounded-lg p-6">
+                    <form id="registrationForm" action="">
+                        <div class="mb-4">
+                            <label for="id" class="block text-gray-700 font-medium mb-2">ID</label>
+                            <input type="text" name="id" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        </div>
+                        <div class="mb-4">
+                            <label for="password" class="block text-gray-700 font-medium mb-2">Password</label>
+                            <input type="password" name="password" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                        </div>
+                        <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">Login</button>
+                    </form>
+                    <p class="mt-4 text-center">
+                        <a href="#" class="text-blue-500 hover:underline">Forgot Password?</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

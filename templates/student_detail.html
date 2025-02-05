@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-blue-600 py-4 fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 text-white">
+            <h1 class="text-2xl font-bold">Student Dashboard</h1>
+            <!-- Dropdown Menu -->
+            <div class="relative">
+                <button id="dropdownButton" class="flex items-center space-x-2 focus:outline-none">
+                    <img src="static/profileicon.png" alt="Profile" class="w-8 h-8 rounded-full">
+                </button>
+                <div id="dropdownMenu"
+                    class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden text-gray-700">
+                    <a href="student_detail.html" class="block px-4 py-2 hover:bg-gray-100">Profile</a>
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Change Password</a>
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">Settings</a>
+                    <a href="logout.html" class="block px-4 py-2 hover:bg-gray-100">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tabs -->
+    <ul class="sticky top-16 z-40 flex justify-center bg-gray-200 border-b border-gray-300">
+        <li class="mr-4">
+            <a href="home.html"
+                class="inline-block py-2 px-6 text-gray-500 hover:text-blue-500 hover:border-blue-500 border-b-2 border-transparent">
+                Home
+            </a>
+        </li>
+        <li class="mr-4">
+            <a href="student_attendance.html"
+                class="inline-block py-2 px-6 text-gray-500 hover:text-blue-500 hover:border-blue-500 border-b-2 border-transparent">
+                Attendance
+            </a>
+        </li>
+        <li class="mr-4">
+            <a href="student_assignment.html"
+                class="inline-block py-2 px-6 text-gray-500 hover:text-blue-500 hover:border-blue-500 border-b-2 border-transparent">
+                Assignments
+            </a>
+        </li>
+        <li>
+            <a href="student_result.html"
+                class="inline-block py-2 px-6 text-gray-500 hover:text-blue-500 hover:border-blue-500 border-b-2 border-transparent">
+                Result
+            </a>
+        </li>
+    </ul>
+
+    <!-- Content Section -->
+    <main class="container mx-auto mt-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <form class="bg-white shadow-md rounded-lg p-6 space-y-6">
+                <!-- Student Name -->
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                    <input type="text" id="name" name="name" value="" disabled
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <!-- Student ID -->
+                <div>
+                    <label for="student-id" class="block text-sm font-medium text-gray-700">Student ID</label>
+                    <input type="number" id="student-id" name="student-id" value="" disabled
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <!-- DOB and Class (in one line) -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="dob" class="block text-sm font-medium text-gray-700">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" value=""
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="class" class="block text-sm font-medium text-gray-700">Class</label>
+                        <input type="text" id="class" name="class" value=""
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" value=""
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700">Mobile Number</label>
+                        <input type="text" id="phone" name="phone" value=""
+                            class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+
+                <!-- Address -->
+                <div>
+                    <label for="address" class="block text-sm font-medium text-gray-700">Address</label>
+                    <textarea id="address" name="address" rows="3" placeholder="Enter address"
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex space-x-4">
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                        Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Script -->
+    <script>
+        const dropdownButton = document.getElementById('dropdownButton');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        // Toggle dropdown menu visibility
+        dropdownButton.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('hidden');
+        });
+
+        // Close the dropdown if clicking outside of it
+        window.addEventListener('click', (e) => {
+            if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>
